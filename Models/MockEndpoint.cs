@@ -26,5 +26,9 @@ namespace ApiMockServer.Models
 
         [BsonElement("isEnabled")]
         public bool IsEnabled { get; set; } = true;
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("collectionId")]
+        public string CollectionId { get; set; } = string.Empty;
     }
 }

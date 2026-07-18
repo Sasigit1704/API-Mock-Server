@@ -17,9 +17,13 @@ builder.Services.AddSingleton<MongoDbContext>(sp =>
 
 // Register the MockEndpointRepository with the DI container
 builder.Services.AddScoped<IMockEndpointRepository, MockEndpointRepository>();
-
 // Register the MockEndpointService with the DI container
 builder.Services.AddScoped<IMockEndpointService, MockEndpointService>();
+
+// Register the CollectionRepository with the DI container
+builder.Services.AddScoped<ICollectionRepository, CollectionRepository>();
+// Register the CollectionService with the DI container
+builder.Services.AddScoped<ICollectionService, CollectionService>();
 
 // Add services to the container.
 builder.Services.AddControllers();

@@ -13,5 +13,7 @@ namespace ApiMockServer.DTOs
         public string ResponseBody { get; set; } = string.Empty;
 
         public bool IsEnabled { get; set; } = true;
+
+        public string CollectionId { get; set; } = string.Empty;
     }
 }

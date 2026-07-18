@@ -36,22 +36,43 @@ namespace ApiMockServer.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateMockEndpointDto dto)
         {
-            await _service.CreateAsync(dto);
-            return Ok("Mock endpoint created successfully.");
+            try 
+            {
+                await _service.CreateAsync(dto);
+                return Ok("Mock endpoint created successfully.");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, UpdateMockEndpointDto dto)
         {
-            await _service.UpdateAsync(id, dto);
-            return Ok("Mock endpoint updated successfully.");
+            try
+            {
+                await _service.UpdateAsync(id, dto);
+                return Ok("Mock endpoint updated successfully.");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            await _service.DeleteAsync(id);
-            return Ok("Mock endpoint deleted successfully.");
+            try
+            {
+                await _service.DeleteAsync(id);
+                return Ok("Mock endpoint deleted successfully.");
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
