@@ -2,18 +2,23 @@
 bin/
 obj/
 
-# Visual Studio
+# User files
 .vs/
-
-# VS Code
-.vscode/
-
-# User-specific files
 *.user
 *.suo
 
 # Logs
 *.log
 
+# Local database files
+Data/db/
+
+# MongoDB lock files
+*.lock
+
 # Environment files
 .env
+
+# OS files
+.DS_Store
+Thumbs.db
